@@ -8,7 +8,6 @@
 
 ###
 
-<img align="right" height="150" src="https://static.myfigurecollection.net/upload/pictures/2021/08/08/2812680.gif"  />
 
 ###
 
