@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>OReactko</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: linear-gradient(135deg, #1e1e2f, #29293d);
+      color: #fefefe;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 50px;
+    }
+
+    header {
+      margin-top: 30px;
+      text-align: center;
+      animation: fadeInDown 0.8s ease;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 5px solid #00ffff88;
+      box-shadow: 0 0 20px #00ffff55;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 2.2em;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff88;
+    }
+
+    nav {
+      margin-top: 25px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav button {
+      padding: 12px 25px;
+      background-color: #2d2d3f;
+      border: 2px solid #00ffff88;
+      border-radius: 8px;
+      color: #00ffff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    nav button:hover,
+    nav button.active-tab {
+      background-color: #00ffff33;
+      transform: scale(1.05);
+      box-shadow: 0 0 8px #00ffff99;
+    }
+
+    .tab-content {
+      display: none;
+      margin-top: 30px;
+      max-width: 700px;
+      background-color: #1a1a2a;
+      border-radius: 16px;
+      box-shadow: 0 0 20px #00ffff33;
+      padding: 30px;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #00ffff;
+    }
+
+    a {
+      color: #ffd1fa;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .icon {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    button:hover {
+        box-shadow: 0 0 15px #00ffffaa, 0 0 30px #00ffff55;
+        transform: translateY(-3px) scale(1.05);
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Avatar OReactko">
+    <h1>🌸 OReactko🌸</h1>
+  </header>
+
+  <nav>
+    <button onclick="openTab('home', this)" class="active-tab">Home</button>
+    <button onclick="openTab('about', this)">About Me</button>
+    <button onclick="openTab('contact', this)">Contact</button>
+    <button onclick="openTab('projects', this)">Projects</button>
+  </nav>
+  <div id="home" class="tab-content active">
+    <h2>🏠 Home</h2>
+    <p>Chào mừng bạn đến với trang cá nhân của OReactko!</p>
+    <div style="text-align: center; margin-top: 30px;">
+        <button onclick="goToAboutMe()"
+            style="padding: 12px 25px; font-weight: bold; background-color: #00ffff22; color: #00ffff; border: 2px solid #00ffff88; border-radius: 10px; cursor: pointer; transition: 0.3s ease;">
+            👉 About Me
+        </button>
+
+        <button onclick="goToContact()" 
+            style="padding: 12px 25px; font-weight: bold; background-color: #00ffff22; color: #00ffff; border: 2px solid #00ffff88; border-radius: 10px; cursor: pointer; transition: 0.3s ease;">
+            📞 Liên hệ
+        </button>
+    </div>
+  </div>
+  <div id="about" class="tab-content">
+    <h2>👾 About Me</h2>
+    <p>Yo! Tôi là <strong>OReactko</strong>, tên thật là Sơn, 11 tuổi, đam mê lập trình và các tựa game như <em>Valorant,osu!,Touhou,Minecraft,LOL,Doom</em>.</p>
+  </div>
+  <div id="projects" class="tab-content">
+    <h2>🛠️ Projects</h2>
+    <p>Hiện tại tôi chưa có dự án nào :)</p>
+  </div>
+
+  <div id="contact" class="tab-content">
+    <h2>📫 Contact</h2>
+    <p><img class="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" width="20">
+      Email: <a href="mailto:son682014@gmail.com">son682014@gmail.com</a></p>
+    <p><img class="icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111370.png" width="20">
+      Discord: oreactko_79476(hiện tại đang bị ban :)</p>
+    <p><img class="icon" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20"> 
+    <a href="https://github.com/OReactko" target="_blank">github.com/OReactko</a></p>
+    <p><img class="icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/simplex-chat.png" width="20">
+    <a href="https://smp11.simplex.im/a#jA9iKRbwExjmbWfK3UXGnB0UH6NFfKvydy7KOkU4jpc">SimpleX</a></p>
+    <p><img class="icon" src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/matrix.png" width="20">
+    #oreactko:matrix.org</p>
+  </div>
+
+  
+  <div id="help-me" class="tab-content">
+    <h2>Nếu bạn đọc đc cái này,hãy cứu tôi.Tôi đang bị trầm cảm 1 cách khó lường.Tôi bắt đầu nghĩ ra những thứ nguy hiểm từ giết người,... đến tận cả nghĩ cảnh ăn thịt người.Xin hãy giúp tôi</h2>
+  </div>
+
+  <script>
+    function openTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('nav button').forEach(b => b.classList.remove('active-tab'));
+      document.getElementById(tabId).classList.add('active');
+      btn.classList.add('active-tab');
+    }
+
+    function goToAboutMe() {
+        document.querySelector('button[onclick*="about"]').click();
+    }
+
+    function goToContact() {
+        document.querySelector('button[onclick*="contact"]').click();
+    }
+  </script>
+
+</body>
+</html>
